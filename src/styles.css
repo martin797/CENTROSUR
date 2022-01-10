@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+
+@font-face {
+  font-family: balooTamma;
+  src: url(assets/Fuentes/balootamma/BalooTamma-Regular.ttf) format("opentype");
+}
+
+body {
+  /* 
+  background: #2c3e50;
+  background: -webkit-linear-gradient(to right, #3498db, #2c3e50);
+  background: linear-gradient(to right, #3498db, #2c3e50);
+  */
+  /* 
+  background: #305594;
+  background: -webkit-linear-gradient(to right, #2f7bad, #152c5f);
+  background: linear-gradient(to right, #2f7bad, #152c5f);
+  */
+  /*
+  background: #305594;
+  background-image: linear-gradient(to left, #10265e, #112860, #132a62, #142c65, #152e67, #18326b, #1a3570, #1d3974, #213f7b, #264683, #2a4c8a, #2e5392);
+  */
+  /*background-image: url("./assets/iconos/compu.png");
+  */
+  background-image: linear-gradient(to right, #074372, #0f4a79, #165180, #1c5888, #225f8f, #236694, #256c99, #27739e, #277aa1, #2b82a4, #3089a6, #3890a8);
+}

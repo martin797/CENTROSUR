@@ -1,0 +1,154 @@
+<!--Vista de la ventana emergente-->
+<div class="modal fade" id="{{colum}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true" #modalFiltro>
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-tittle" id="organizarFiltros">
+                    Opciones de Filtrado
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" arial-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!--Ordenacion-->
+                <div class="d-grid">
+                    <h4>Mostrar las filas en las cuales: <h5 class="font-monospace">{{colum}}</h5>
+                    </h4>
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <button type="button" class="btn btn-outline-dark">Ordenar de
+                            Mayor
+                            a Menor
+                        </button>
+                        <button type="button" class="btn btn-outline-dark">Ordenar de
+                            Menor
+                            a Mayor
+                        </button>
+                    </div>
+                    <br>
+                </div>
+                <!--Opciones de filtrado-->
+                <div class="d-grid gap-2 d-md-flex">
+                    <!--Preguntas-->
+                    <div class="col-4">
+                        <div class="form-floating">
+                            <select class="form-select" id="floatingSelect" aria-label="Floating label select example"
+                                (change)="update($event)">
+                                <!--option selected>Filtros</option-->
+                                <ng-container *ngIf="verTipo(colum) == 'L'">
+                                    <ng-container *ngFor="let item of letras">
+                                        <ng-container *ngIf="verConfiguracion(colum,item); else noTieneConfigList_L1">
+                                            <option selected [value]="item">
+                                                {{item}}
+                                            </option>
+                                        </ng-container>
+                                        <ng-template #noTieneConfigList_L1>
+                                            <option [value]="item">
+                                                {{item}}
+                                            </option>
+                                        </ng-template>
+                                    </ng-container>
+                                </ng-container>
+                                <ng-container *ngIf="verTipo(colum) == 'N'">
+                                    <ng-container *ngFor="let item of numeros">
+                                        <ng-container *ngIf="verConfiguracion(colum,item); else noTieneConfigList_N1">
+                                            <option selected [value]="item">
+                                                {{item}}
+                                            </option>
+                                        </ng-container>
+                                        <ng-template #noTieneConfigList_N1>
+                                            <option [value]="item">
+                                                {{item}}
+                                            </option>
+                                        </ng-template>
+                                    </ng-container>
+                                </ng-container>
+                            </select>
+                            <label for="floatingSelect">Elegir Filtro</label>
+                        </div>
+                    </div>
+                    <!--Campo Texto-->
+                    <div class="col-8">
+                        <div class="input-group mb-3 input-group-lg">
+                            <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Valores</button>
+                            <ul class="dropdown-menu">
+                                <li *ngFor="let valor of rowsUnique">
+                                    <a class="dropdown-item" (click)="seleccionarCategoria(colum,valor)">
+                                        {{valor}}</a>
+                                </li>
+                            </ul>
+                            <input id="texto-{{colum}}" #texto (keyup)="ingresoTexto(colum,$event)" type="text"
+                                class="form-control" aria-label="Text input with dropdown button" value="{{selecion}}">
+                            <!--p>value={{getConfigValor(colum)}}</p-->
+                            <!--p>value="{{selecion}}"</p-->
+                        </div>
+                    </div>
+                </div>
+                <!---------------------..-->
+                <!--Selectores...And OR..-->
+                <!---------------------..-->
+                <div class="d-grid">
+                    <div class="col mx-auto">
+                        <div class="form-check-lg form-check-inline ">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                value="option1">
+                            <label class="form-check-label" for="inlineRadio1">Y</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                value="option2">
+                            <label class="form-check-label" for="inlineRadio2">O</label>
+                        </div>
+                        <br><br>
+                    </div>
+                </div>
+                <!--Opciones de filtrado-->
+                <div class="d-grid gap-2 d-md-flex">
+                    <!--Preguntas-->
+                    <div class="col-4">
+                        <div class="form-floating">
+                            <select class="form-select" id="floatingSelect" aria-label="Floating label select example"
+                                (change)="update2($event)" *ngIf="verTipo(colum) == 'L'">
+                                <option *ngFor="let item of letras" [value]="item">
+                                    {{item}}
+                                </option>
+                            </select>
+                            <select class="form-select" id="floatingSelect" aria-label="Floating label select example"
+                                (change)="update2($event)" *ngIf="verTipo(colum) == 'N'">
+                                <option *ngFor="let item of numeros" [value]="item">
+                                    {{item}}
+                                </option>
+                            </select>
+                            <label for="floatingSelect">Elegir Filtro</label>
+                        </div>
+                    </div>
+                    <!--Campo Texto-->
+                    <div class="col-8">
+                        <div class="input-group mb-3 input-group-lg">
+                            <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Valores</button>
+                            <ul class="dropdown-menu">
+                                <li *ngFor="let valor of rowsUnique">
+                                    <a class="dropdown-item" (click)="seleccionarCategoria2(valor)">
+                                        {{valor}}</a>
+                                </li>
+                            </ul>
+                            <input (keyup)="ingresoTexto2($event)" type="text" class="form-control"
+                                aria-label="Text input with dropdown button" value={{selecion2}}>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    Cancelar
+                </button>
+                <button type="button" class="btn btn-primary"
+                    (click)="recogerFiltros(colum,opcion,texto.value)">
+                    Aplicar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

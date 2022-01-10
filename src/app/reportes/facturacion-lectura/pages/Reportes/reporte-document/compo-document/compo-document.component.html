@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="alert my_color" role="alert" *ngFor="let doc of documentos">
+        <div class="row">
+            <div class="col-md-4 col-sm-4">
+                <h1 class="bi">{{doc.nombre}}</h1>
+            </div>
+            <div class="col-md-2 col-sm-4">
+                <h1 class="bi">{{doc.filasConFiltro}}</h1>
+            </div>
+            <div class="col-md-1 col-sm-1">
+                <!--i class="bi bi-exclamation-circle-fill bi-lg"></i-->
+                <img *ngIf="doc.filasConFiltro == 0 && doc.nuevo == false" src="./assets/iconos/check.png"
+                    class="img-fluid my_icon">
+                <img *ngIf="doc.filasConFiltro > 0 && doc.nuevo == false" src="./assets/iconos/error.png"
+                    class="img-fluid my_icon">
+                <img *ngIf="doc.nuevo == true" src="./assets/iconos/warning.png" class="img-fluid my_icon">
+            </div>
+            <div class="col-md-2 col-sm-2">
+                <h1 class="doc_nuevo" *ngIf="doc.nuevo == true">Sin Filtros</h1>
+            </div>
+            <div class="col-md-2 col-sm-2">
+                <a type="button" class="btn c_boton" (click)="getRowSelect(doc)">VER</a>
+            </div>
+            <div class="col-md-1 col-sm-1">
+                <button type="button" class="btn-close" aria-label="Close" data-bs-toggle="modal"
+                    [attr.data-bs-target]="'#'+getCode(doc.nombre)"></button>
+            </div>
+            <!--Ventana Modal-->
+            <div class="modal fade" id="{{getCode(doc.nombre)}}" data-bs-backdrop="static" data-bs-keyboard="false"
+                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Eliminar documento</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <h2>¿Desea quitar el documento {{doc.nombre}} ?</h2>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button (click)="deleteRowSelect(doc)" type="button" class="btn btn-primary"
+                                data-bs-dismiss="modal">Si</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+</div>

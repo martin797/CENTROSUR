@@ -1,0 +1,32 @@
+.text-break {
+    color: cornsilk;
+    font-size: 50px;
+}
+
+.form-label {
+    font-family: 'Baloo Tamma', cursive;
+    text-align: center;
+    color: cornsilk;
+    font-size: 30px;
+}
+
+.container {
+    padding: 5px;
+}
+
+.row {
+    margin: 30px;
+}
+
+.img-fluid {
+    width: 20%;
+}
+
+.buscar1 {
+    width: 50%;
+    margin: 10px;
+}
+
+.textFile{
+    font-size: 20px;
+}

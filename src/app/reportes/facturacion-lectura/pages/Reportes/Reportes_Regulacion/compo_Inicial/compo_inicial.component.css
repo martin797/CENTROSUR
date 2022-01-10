@@ -1,0 +1,14 @@
+.alert{
+    margin: 25px;
+}
+h1{
+    text-align: center;
+}
+.bi{
+    font-size: 30px;
+}
+.btn-danger{
+    margin: 5px;
+    font-size: 20px;
+    width: 100px;
+}

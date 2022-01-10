@@ -1,0 +1,49 @@
+.container {
+    max-height: 100px;
+    max-width: 1100px;
+}
+
+.alert {
+    margin: 25px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.bi {
+    font-size: 30px;
+    color: #ffffff;
+}
+
+.doc_nuevo {
+    margin: 10px;
+    font-size: 25px;
+    color: #9e2424;
+}
+
+.btn-danger {
+    margin: 5px;
+    font-size: 20px;
+    width: 100px;
+}
+
+.c_boton {
+    margin: 5px;
+    background: #0f3c72;
+    color: #ffffff;
+}
+
+.my_color {
+    background-image: linear-gradient(to left bottom, #25cdf0, #25c3e7, #25b8de, #26aed5, #27a4cb, #1a9bc7, #0c93c3, #008abf, #0080bf, #0075be, #006abb, #0b5eb7);
+    border-radius: 15px;
+    -webkit-box-shadow: 2px 10px 18px -1px rgba(29, 96, 196, 1);
+    -moz-box-shadow: 2px 10px 18px -1px rgba(29, 96, 196, 1);
+    box-shadow: 2px 10px 18px -1px rgba(29, 96, 196, 1);
+}
+
+.my_icon {
+    margin: 5px;
+    max-width: 30px;
+    max-height: 30px;
+}

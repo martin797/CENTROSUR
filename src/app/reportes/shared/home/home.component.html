@@ -1,0 +1,34 @@
+<!--Manu Principal..-->
+<nav class="navbar fixed-top navbar-expand-lg fs-5 navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="btn avbar-brand fs-4 titulo" (click)="openHome()">
+      <img src="./assets/iconos/rayo3.png" alt="" width="40" height="40" class="d-inline-block align-text-top">
+      {{titulo}}
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 items">
+        <li class="nav-item">
+          <a class="nav-link active btn_navbar" (click)="openGestion()" type="button">Gestión</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active btn_navbar" (click)="openRegulacion()" type="button" tabindex="-1"
+            aria-disabled="true">Regulación</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active btn_navbar" (click)="openRegulacion_A()" type="button" tabindex="-1"
+            aria-disabled="true">Regulación
+            antes</a>
+        </li>
+      </ul>
+      <div class="d-grid gap-3 d-md-flex justify-content-md-end">
+        <button class="btn btn-success me-md-2" (click)="ayuda()" type="button">Ayuda</button>
+        <button class="btn btn-success" (click)="contactenos()" type="button">Contáctanos</button>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="container"></div>

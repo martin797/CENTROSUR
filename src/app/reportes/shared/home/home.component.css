@@ -1,0 +1,37 @@
+.nav-link:hover {
+    background-color: #3a8acc;
+    transition: all 1s ease;
+    border-radius: 15px;
+}
+
+.container {
+    margin-top: 80px;
+}
+
+.navbar {
+    background-image: linear-gradient(to top, #4ac9d1, #47c3cb, #44bcc5, #41b6bf, #3eb0b9, #3dacb5, #3ba8b1, #3aa4ad, #3aa1aa, #3a9fa6, #3a9ca3, #3a9aa0);
+    /*
+    -webkit-box-shadow: 0px 6px 5px 0px rgba(26, 129, 184, 1);
+    -moz-box-shadow: 0px 6px 5px 0px rgba(26, 129, 184, 1);
+    box-shadow: 0px 6px 5px 0px rgba(26, 129, 184, 1);
+    */
+}
+
+.items {
+    border-radius: 15px;
+    font-size: 25px;
+}
+
+.logo {
+    font-size: 15px;
+}
+
+.btn_navbar {
+    font-size: 20px;
+}
+
+.titulo {
+    font-weight: bold;
+    color: #ffffff;
+    
+}

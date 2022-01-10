@@ -1,0 +1,56 @@
+<div class="contaner-lg">
+  <div class="row justify-content-md-center">
+    <p class="font-monospace">Reportes de {{tipo_reporte}}</p>
+  </div>
+  <div class="row row-caja">
+    <div class="my_card my_color">
+      <div class="row">
+        <h1 class="text_card">Filtros del documento:</h1>
+        <h1 class="text_card_value">{{doc_actual.nombre}}</h1>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h1 class="text_card">Numero de registros:</h1>
+          <h1 class="text_card_value">{{doc_actual.filas}}</h1>
+        </div>
+        <div class="col">
+          <h1 class="text_card">Numero de filtros:</h1>
+          <h1 class="text_card_value">{{filtros_doc.length}}</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="row row-content">
+    <div class="col-md-6 col-sm-4">
+      <div class="col-md-5 cont_boton">
+        <button class="btn btn-warning bi btn_nuevo" type="button" (click)="crearFiltro()"><i
+            class="bi bi-funnel-fill btn_nuevo"></i> Nuevo Filtro</button>
+      </div>
+    </div>
+    <div class="col-md-6 col-sm-4 alerta">
+      <div class="row">
+        <div class="col">
+          <p class="error"> Alertas:</p>
+        </div>
+        <div class="col">
+          <p class="error_num">{{filasFiltro}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <!--Componentes de los Filtros-->
+  <div class="row caja">
+    <div class="col-lg-12 ">
+      <app-compo-filtro-vista [doc_actual]="doc_actual" [tipo_reporte]="tipo_reporte" [array]="filtros_doc">
+      </app-compo-filtro-vista>
+    </div>
+  </div>
+  <br>
+  <br>
+</div>

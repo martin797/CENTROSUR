@@ -1,0 +1,20 @@
+<div class="contaner-lg">
+    <div class="row justify-content-md-center">
+        <p class="font-monospace">Reportes de {{tipo_reporte}}</p>
+    </div>
+    <div class="row">
+        <div class="d-grid col-lg-10 mx-auto">
+            <app-subir-informe [tipo_reporte]="tipo_reporte"></app-subir-informe>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="row caja">
+        <!--Componentes de las ventanas-->
+        <div class="col-lg-12 " top="10px">
+            <app-compo-document [tipo_reporte]="tipo_reporte" [array]="array" [url_padre]="url_p2"></app-compo-document>
+        </div>
+    </div>
+    <br>
+    <br>
+</div>

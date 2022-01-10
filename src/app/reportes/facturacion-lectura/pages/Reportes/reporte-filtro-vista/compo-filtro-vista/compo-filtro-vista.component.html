@@ -1,0 +1,42 @@
+<ng-container *ngIf="filtrosDocActual.length !== 0">
+  <div class="container">
+    <div class="alert my_color" role="alert" *ngFor="let filter of filtrosDocActual">
+      <div class="row">
+        <div class="col-md-4 col-sm-4">
+          <h1 class="bi">{{filter.nombre_filtro}}</h1>
+        </div>
+        <div class="col-md-5 col-sm-5">
+          <h1 class="bi">{{filter.filas}}</h1>
+        </div>
+        <div class="col-md-2 col-sm-2">
+          <a type="button" class="btn c_boton" (click)="getRowSelect(doc_actual,filter)">VER</a>
+        </div>
+        <!--div class="col-md-1 col-sm-1">
+          <button type="button" class="btn-close" aria-label="Close" data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop"></button>
+        </div-->
+        <!--Ventana Modal-->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+          aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">ELIMINAR FILTRO</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <h2>¿Desea eliminar este Filtro?</h2>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" (click)="deleteRowSelect(filter.nombre_filtro)" data-bs-dismiss="modal">Si</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+  </div>
+</ng-container>

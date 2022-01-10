@@ -1,0 +1,43 @@
+.container {
+    max-height: 100px;
+    max-width: 1100px;
+}
+
+.alert {
+    margin: 25px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.bi {
+    font-size: 30px;
+    color: #ffffff;
+}
+
+.btn-danger {
+    margin: 5px;
+    font-size: 20px;
+    width: 100px;
+}
+
+.btn-close {
+    margin: 10px;
+    height: 20px;
+}
+
+.c_boton {
+    margin: 5px;
+    background: #0f3c72;
+    color: #ffffff;
+}
+
+.my_color {
+    /*background: #19b5e7;*/
+    background-image: linear-gradient(to left bottom, #fdc425, #fbb81c, #f9ab13, #f79f0b, #f49206, #f28903, #ef8002, #ec7702, #e96f01, #e66801, #e36001, #e05802);
+    border-radius: 15px;
+    -webkit-box-shadow: 2px 10px 18px -1px rgba(255, 119, 0, 1);
+    -moz-box-shadow: 2px 10px 18px -1px rgba(255, 119, 0, 1);
+    box-shadow: 2px 10px 18px -1px rgba(255, 119, 0, 1);
+}
